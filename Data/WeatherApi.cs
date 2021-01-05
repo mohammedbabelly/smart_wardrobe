@@ -7,11 +7,13 @@ namespace smart_wardrobe.Data {
         private const string APIKEY = "80c98f42629f6d9a7dcd6b6c38f9cd6b";
         private string _weatherURL;
         private string _baseURL = "https://api.openweathermap.org";
-        public WeatherAPI(string city) {
+        public WeatherAPI(string city)
+        {
             SetCurrentURL(city);
         }
 
-        private void SetCurrentURL(string city) {
+        private void SetCurrentURL(string city)
+        {
             _weatherURL = _baseURL + "/data/2.5/weather?q="
                 + city + "&appid=" + APIKEY + "&units=metric";
         }

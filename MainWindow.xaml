@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid  Margin="0,0,583,0">
+            <Label VerticalAlignment="Bottom" Margin="0,25,0,350" FontSize="25" HorizontalAlignment="Center"  >Enter your city</Label>
+            <TextBox x:Name="txtcity" Height="50" Width="160"  Margin="20,25,20,200" VerticalAlignment="Center" HorizontalAlignment="Center"  TextAlignment="Center" FontSize="30"  ></TextBox>
+            <StackPanel VerticalAlignment="Center" Margin="10"  Width="200" Orientation="Horizontal">
+                
+                <RadioButton x:Name="rdbf" VerticalAlignment="Center" Margin="10" ></RadioButton>
+                <Label VerticalAlignment="Center" >Male</Label>
+                
+                <RadioButton x:Name="rdbm" VerticalAlignment="Center" Margin="20" />
+                <Label VerticalAlignment="Center" >Female</Label>
+            </StackPanel>
+            <Button Height="38" Width="120"  Click="Button_Click"    FontSize="20" RenderTransformOrigin="0.509,1.282" Margin="0,300,0,50" >Search</Button>
+        </Grid>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="217,0,0,-0.4"  />
+
     </Grid>
 </Window>
