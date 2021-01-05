@@ -21,46 +21,28 @@ namespace smart_wardrobe
     public partial class face : Page
     {
 
-        private List<string> path;
-        public face(  List<string> paths, float _temp, string currentcity)
-
+        private string[] path;
+        public face(  string[] paths, float _temp, string currentcity)
         {
+            
             InitializeComponent();
-
-            this.path = paths;
+            path = paths ;
+            getoutfit();
             txtbcity.Text = currentcity;
-            
-            getimage();
+
+            //C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\clear-day\female\above-40\mainImgs
 
         }
 
-        private void getimage()
+        private List<result> getoutfit()
         {
-            for (int i = 0; i < path.Count; i++)
-            {
-                
-            }
-            
+            return new List<result> ()
+                {
+                new result(path[0]),//"clear-day/female/0-20/mainImgs/img1.jpg"
+                new result(path[1]),//"clear-day/female/0-20/mainImgs/img2.jpg"
+                new result(path[2])//"clear-day/female/0-20/mainImgs/img3.jpg"
+            };
         }
-
-
-
-        //private List<result> Getresult()
-        //{
-        //    return new List<result>()
-        //    {
-        //        new result("C:/Users/USER/source/repos/smart_wardrobe/bin/Debug/Assets/images/clear-day/female/0-20/accessories/img1.jbg"),
-        //         new result("C:/Users/USER/source/repos/smart_wardrobe/bin/Debug/Assets/images/clear-day/female/0-20/accessories/img2.jbg"),
-        //          new result("C:/Users/USER/source/repos/smart_wardrobe/bin/Debug/Assets/images/clear-day/female/0-20/accessories/img3.jbg"),
-        //           new result("C:/Users/USER/source/repos/smart_wardrobe/bin/Debug/Assets/images/clear-day/female/0-20/accessories/img4.jbg"),
-        //            new result("C:/Users/USER/source/repos/smart_wardrobe/bin/Debug/Assets/images/clear-day/female/0-20/accessories/img5.jbg"),
-
-        //    };
-        //}
-
-
-
-
     }
 }
    

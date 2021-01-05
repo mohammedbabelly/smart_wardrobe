@@ -26,6 +26,7 @@ namespace smart_wardrobe {
 
         }
         private List<string> paths = new List<string>();
+        private string path;
         private Weather weather;
         string sex ;
 
@@ -38,7 +39,7 @@ namespace smart_wardrobe {
             var solution2 = prolog.GetAllSolutions(AppDomain.CurrentDomain.BaseDirectory + "Assets/prolog/outfits.pl", query);
             foreach (var d in solution2.NextSolution) {
                 foreach (var s in d.NextVariable) {
-                     paths.Add(s.Value);
+                     path= s.Value;
                 }
             }
             return paths;
@@ -54,7 +55,9 @@ namespace smart_wardrobe {
         {
             weather = new WeatherAPI(txtcity.Text).FetchData();
             ExcuteProlog();
-            Main.Content = new face( paths, weather.main.temp , txtcity.Text);
+            string[] separatingStrings = {"]","[",",","", "\""," " };
+            string[] words = path.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
+            Main.Content = new face( words, weather.main.temp , txtcity.Text);
         }
            
 
